@@ -1,106 +1,141 @@
 <template>
   <main>
-        <div class="preview">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
+    <div class="preview">
+      <div class="container">
+        <div class="row">
+          <div class="col">
 
-                      <nav-bar-component/>
+            <nav-bar-component />
 
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <h1 class="title-big">Everything You Love About Coffee</h1>
-                        <img class="beanslogo" src="@/assets/logo/Beans_logo.svg" alt="Beans logo">
-                        <div class="preview__subtitle">We makes every day full of energy and taste</div>
-                        <div class="preview__subtitle">Want to try our beans?</div>
-
-                        <router-link to="/our-coffee" class="preview__btn">More</router-link>
-                        
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-
-        <section class="about">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-3">
-                        <div class="title">About Us</div>
-                        <img class="beanslogo" src="@/assets/logo/Beans_logo_dark.svg" alt="Beans logo">
-                        <div class="about__text">
-                            Extremity sweetness difficult behaviour he of. On disposal of as landlord horrible.
-                            Afraid at highly months do things on at. Situation recommend objection do intention
-                            so questions. As greatly removed calling pleased improve an. Last ask him cold feel
-                            met spot shy want. Children me laughing we prospect answered followed. At it went
-                            is song that held help face.<br><br>
-
-                            Now residence dashwoods she excellent you. Shade being under his bed her, Much
-                            read on as draw. Blessing for ignorant exercise any yourself unpacked. Pleasant
-                            horrible but confined day end marriage. Eagerness furniture set preserved far
-                            recommend. Did even but nor are most gave hope. Secure active living depend son
-                            repair day ladies now.
-                        </div>
-                    </div>
-                </div>
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1">
+            <h1 class="title-big">Everything You Love About Coffee</h1>
+            <img
+              class="beanslogo"
+              src="@/assets/logo/Beans_logo.svg"
+              alt="Beans logo"
+            />
+            <div class="preview__subtitle">
+              We makes every day full of energy and taste
             </div>
-        </section>
+            <div class="preview__subtitle">Want to try our beans?</div>
 
-        <section class="best">
-            <div class="container">
-                <div class="title">Our best</div>
-                <div class="row">
-                    <div class="col-lg-10 offset-lg-1">
-                        <div class="best__wrapper">
+            <router-link to="/our-coffee" class="preview__btn" >More</router-link >
 
-                            <card-product-component/>
-                            <card-product-component/>
-                            <card-product-component/>
+          </div>
+        </div>
+      </div>
+    </div>
 
-                            <!-- <div class="best__item">
-                                <img src="@/assets/./img/coffee-1.jpg" alt="coffee">
-                                <div class="best__item-title">
-                                    Solimo Coffee Beans 2kg
-                                </div>
-                                <div class="best__item-price">10.73$</div>
-                            </div> -->
-                            <!-- <div class="best__item">
-                                <img src="@/assets/./img/coffee-2.jpg" alt="coffee">
-                                <div class="best__item-title">
-                                    Presto Coffee Beans 1kg
-                                </div>
-                                <div class="best__item-price">15.99$</div>
-                            </div>
-                            <div class="best__item">
-                                <img src="@/assets/./img/coffee-3.jpg" alt="coffee">
-                                <div class="best__item-title">
-                                    AROMISTICO Coffee 1kg
-                                </div>
-                                <div class="best__item-price">6.99$</div>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
+    <section class="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+            <div class="title">About Us</div>
+            <img
+              class="beanslogo"
+              src="@/assets/logo/Beans_logo_dark.svg"
+              alt="Beans logo"
+            />
+            <div class="about__text">
+              Extremity sweetness difficult behaviour he of. On disposal of as
+              landlord horrible. Afraid at highly months do things on at.
+              Situation recommend objection do intention so questions. As
+              greatly removed calling pleased improve an. Last ask him cold feel
+              met spot shy want. Children me laughing we prospect answered
+              followed. At it went is song that held help face.<br /><br />
+
+              Now residence dashwoods she excellent you. Shade being under his
+              bed her, Much read on as draw. Blessing for ignorant exercise any
+              yourself unpacked. Pleasant horrible but confined day end
+              marriage. Eagerness furniture set preserved far recommend. Did
+              even but nor are most gave hope. Secure active living depend son
+              repair day ladies now.
             </div>
-        </section>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="best">
+      <div class="container">
+        <div class="title">Our best</div>
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1">
+            <div class="best__wrapper">
+
+              <card-product-component />
+              <card-product-component />
+              <card-product-component />
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </template>
 
 <script>
+import NavBarComponent from "@/components/NavBarComponent.vue";
+import CardProductComponent from "@/components/CardProductComponent.vue";
 
-  import NavBarComponent from '@/components/NavBarComponent.vue'
-  import CardProductComponent from '@/components/CardProductComponent.vue'
-
-  export default {
-    components: {
-      NavBarComponent,
-      CardProductComponent
-    }
-  }
-  
+export default {
+  components: {
+    NavBarComponent,
+    CardProductComponent,
+  },
+  data() {
+    return {
+      cards: [
+        {
+          id: 0,
+          icon: "good-1.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          country: "Brazil",
+          price: "10.73$",
+        },
+        {
+          id: 1,
+          icon: "good-1.jpg",
+          title: "Presto Coffee Beans 1kg",
+          country: "Brazil",
+          price: "15.99$",
+        },
+        {
+          id: 2,
+          icon: "good-1.jpg",
+          title: "AROMISTICO Coffee 1kg",
+          country: "Brazil",
+          price: "6.99$",
+        },
+        {
+          id: 3,
+          icon: "good-1.jpg",
+          title: "Africa Coffee 1kg",
+          country: "Africa",
+          price: "8.99$",
+        },
+        {
+          id: 4,
+          icon: "good-1.jpg",
+          title: "Argentina Coffee 2kg",
+          country: "Argentina",
+          price: "13.99$",
+        },
+        {
+          id: 5,
+          icon: "good-1.jpg",
+          title: "Pakistan Coffee 1kg",
+          country: "Pakistan",
+          price: "5.99$",
+        },
+      ],
+    };
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

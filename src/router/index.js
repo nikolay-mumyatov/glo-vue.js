@@ -13,7 +13,6 @@ const routes = [
   {path: '/', component: HeroView},
   {path: '/our-coffee', component: OurCoffeeView},
   {path: '/goods-page', component: GoodsPageView},
-  {path: '/goods-page', component: GoodsPageView},
   {path: '/contacts', component: ContactsView},
   {path: '/thanks', component: ThanksPageView}
 ];

@@ -9,7 +9,7 @@
 
                 </div>
             </div>
-            <h1 class="title-big">Contact us</h1>
+            <h1 class="title-big">Thank you</h1>
         </div>
     </div>
     <section class="contacts">

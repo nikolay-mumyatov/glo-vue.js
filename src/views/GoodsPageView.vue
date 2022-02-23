@@ -71,6 +71,54 @@ export default {
     NavBarComponent,
     CardProductComponent,
   },
+  data() {
+    return {
+      cards: [
+        {
+          id: 0,
+          icon: "coffee-3.jpg",
+          title: "Solimo Coffee Beans 2kg",
+          country: "Brazil",
+          price: "10.73$",
+        },
+        {
+          id: 1,
+          icon: "coffee-3.jpg",
+          title: "Presto Coffee Beans 1kg",
+          country: "Brazil",
+          price: "15.99$",
+        },
+        {
+          id: 2,
+          icon: "coffee-3.jpg",
+          title: "AROMISTICO Coffee 1kg",
+          country: "Brazil",
+          price: "6.99$",
+        },
+        {
+          id: 3,
+          icon: "coffee-3.jpg",
+          title: "Africa Coffee 1kg",
+          country: "Africa",
+          price: "8.99$",
+        },
+        {
+          id: 4,
+          icon: "coffee-3.jpg",
+          title: "Argentina Coffee 2kg",
+          country: "Argentina",
+          price: "13.99$",
+        },
+        {
+          id: 5,
+          icon: "coffee-3.jpg",
+          title: "Pakistan Coffee 1kg",
+          country: "Pakistan",
+          price: "5.99$",
+        },
+      ],
+    };
+  },
 };
 </script>
 
