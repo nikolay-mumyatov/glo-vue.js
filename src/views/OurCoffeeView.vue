@@ -71,53 +71,20 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
-              <card-product-component
-                class="shop__item"
-                :icon="coffeeCards[0].icon"
-                :title="coffeeCards[0].title"
-                :country="coffeeCards[0].country"
-                :price="coffeeCards[0].price"
-              />
 
               <card-product-component
+                v-for="item in coffeeCards"
                 class="shop__item"
-                :icon="coffeeCards[1].icon"
-                :title="coffeeCards[1].title"
-                :country="coffeeCards[1].country"
-                :price="coffeeCards[1].price"
-              />
+                :icon="item.icon"
+                :title="item.title"
+                :price="item.price"
+              >
+                <template v-if="item.country" v-slot:country>
+                  <div class="shop__item-country"> {{ item.country }} </div>
+                </template>
+                
+              </card-product-component>
 
-              <card-product-component
-                class="shop__item"
-                :icon="coffeeCards[2].icon"
-                :title="coffeeCards[2].title"
-                :country="coffeeCards[2].country"
-                :price="coffeeCards[2].price"
-              />
-
-              <card-product-component
-                class="shop__item"
-                :icon="coffeeCards[3].icon"
-                :title="coffeeCards[3].title"
-                :country="coffeeCards[3].country"
-                :price="coffeeCards[3].price"
-              />
-
-              <card-product-component
-                class="shop__item"
-                :icon="coffeeCards[4].icon"
-                :title="coffeeCards[4].title"
-                :country="coffeeCards[4].country"
-                :price="coffeeCards[4].price"
-              />
-
-              <card-product-component
-                class="shop__item"
-                :icon="coffeeCards[5].icon"
-                :title="coffeeCards[5].title"
-                :country="coffeeCards[5].country"
-                :price="coffeeCards[5].price"
-              />
             </div>
           </div>
         </div>

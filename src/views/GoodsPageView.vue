@@ -4,21 +4,22 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-
             <nav-bar-component />
-
           </div>
         </div>
 
         <header-title-component :title="this.title" />
-        
       </div>
     </div>
     <section class="shop">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 offset-2">
-            <img class="shop__girl" src="@/assets/img/coffee_goods.jpg" alt="girl" />
+            <img
+              class="shop__girl"
+              src="@/assets/img/coffee_goods.jpg"
+              alt="girl"
+            />
           </div>
           <div class="col-lg-4">
             <div class="title">About our beans</div>
@@ -49,53 +50,18 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
 
-              <card-product-component 
+              <card-product-component
+                v-for="item in goodsCards"
                 class="shop__item"
-                :icon="goodsCards[0].icon"
-                :title="goodsCards[0].title"
-                :country="goodsCards[0].country"
-                :price="goodsCards[0].price"
-              />
-
-              <card-product-component 
-                class="shop__item"
-                :icon="goodsCards[1].icon"
-                :title="goodsCards[1].title"
-                :country="goodsCards[1].country"
-                :price="goodsCards[1].price"
-              />
-
-              <card-product-component 
-                class="shop__item"
-                :icon="goodsCards[2].icon"
-                :title="goodsCards[2].title"
-                :country="goodsCards[2].country"
-                :price="goodsCards[2].price"
-              />
-
-              <card-product-component 
-                class="shop__item"
-                :icon="goodsCards[3].icon"
-                :title="goodsCards[3].title"
-                :country="goodsCards[3].country"
-                :price="goodsCards[3].price"
-              />
-
-              <card-product-component 
-                class="shop__item"
-                :icon="goodsCards[4].icon"
-                :title="goodsCards[4].title"
-                :country="goodsCards[4].country"
-                :price="goodsCards[4].price"
-              />
-
-              <card-product-component 
-                class="shop__item"
-                :icon="goodsCards[5].icon"
-                :title="goodsCards[5].title"
-                :country="goodsCards[5].country"
-                :price="goodsCards[5].price"
-              />
+                :icon="item.icon"
+                :title="item.title"
+                :price="item.price"
+              >
+                <template v-if="item.country" v-slot:country>
+                  <div class="shop__item-country"> {{ item.country }} </div>
+                </template>
+                
+              </card-product-component>
 
             </div>
           </div>
@@ -108,17 +74,17 @@
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
 import CardProductComponent from "@/components/CardProductComponent.vue";
-import HeaderTitleComponent from "@/components/HeaderTitleComponent.vue"
+import HeaderTitleComponent from "@/components/HeaderTitleComponent.vue";
 
 export default {
   components: {
     NavBarComponent,
     CardProductComponent,
-    HeaderTitleComponent
+    HeaderTitleComponent,
   },
   data() {
     return {
-      title: 'For your pleasure',
+      title: "For your pleasure",
       goodsCards: [
         {
           id: 0,

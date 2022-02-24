@@ -2,21 +2,29 @@
   <header>
     <ul class="header d-flex justify-content-center justify-content-md-start flex-wrap">
 
-      <li v-for="link in links" class="header__item">
-
-        <router-link :to="link.link">
-          <img v-if="link.icon" :src="require(`@/assets/logo/${link.icon}`)" alt="logo" />
-          <span v-else>{{link.text}}</span>
-        </router-link>
-
-      </li>
+      <nav-item-component
+        v-for="item in links"
+        :key="links.id"
+        :link="item.link"
+        :text="item.text"
+        classLink="header__item"
+      >
+        <template v-if="item.icon" v-slot:image>
+          <img  :src="require(`@/assets/logo/${item.icon}`)" alt="logo" />
+        </template>
+      </nav-item-component>
       
     </ul>
   </header>
 </template>
 
 <script>
+  import NavItemComponent from '@/components/NavItemComponent.vue';
+
   export default {
+    components: {
+      NavItemComponent
+    },
     data() {
       return {
         links: [

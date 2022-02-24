@@ -66,26 +66,14 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
-              <card-product-component
-                :icon="bestsellers[0].icon"
-                :title="bestsellers[0].title"
-                :country="bestsellers[0].country"
-                :price="bestsellers[0].price"
-              />
 
               <card-product-component
-                :icon="bestsellers[1].icon"
-                :title="bestsellers[1].title"
-                :country="bestsellers[1].country"
-                :price="bestsellers[1].price"
+                v-for="item in bestsellers"
+                :icon="item.icon"
+                :title="item.title"
+                :price="item.price"
               />
 
-              <card-product-component
-                :icon="bestsellers[2].icon"
-                :title="bestsellers[2].title"
-                :country="bestsellers[2].country"
-                :price="bestsellers[2].price"
-              />
             </div>
           </div>
         </div>

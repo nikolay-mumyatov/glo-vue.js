@@ -5,27 +5,38 @@
         <div class="col-lg-6 offset-lg-3">
           <ul class="footer d-flex flex-wrap">
 
-            <li v-for="link in links" class="footer__item">
-
-              <router-link :to="link.link">
-                <img v-if="link.icon" :src="require(`@/assets/logo/${link.icon}`)" alt="logo" />
-                <span v-else>{{ link.text }}</span>
-              </router-link>
-
-            </li>
+            <nav-item-component
+              v-for="item in links"
+              :key="links.id"
+              :link="item.link"
+              :text="item.text"
+              classLink="footer__item"
+            >
+              <template v-if="item.icon" v-slot:image>
+                <img :src="require(`@/assets/logo/${item.icon}`)" alt="logo" />
+              </template>
+            </nav-item-component>
 
           </ul>
         </div>
       </div>
 
-      <img class="beanslogo" src="@/assets/logo/Beans_logo_dark.svg" alt="Beans logo" />
-
+      <img
+        class="beanslogo"
+        src="@/assets/logo/Beans_logo_dark.svg"
+        alt="Beans logo"
+      />
     </div>
   </footer>
 </template>
 
 <script>
+import NavItemComponent from '@/components/NavItemComponent.vue'
+
 export default {
+  components: {
+    NavItemComponent
+  },
   data() {
     return {
       links: [
