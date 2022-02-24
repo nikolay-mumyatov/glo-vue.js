@@ -9,7 +9,9 @@
 
                 </div>
             </div>
-            <h1 class="title-big">Our Coffee</h1>
+
+            <header-title-component :title="this.title" />
+                
         </div>
     </div>
 
@@ -46,11 +48,18 @@
 
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
+import HeaderTitleComponent from "@/components/HeaderTitleComponent.vue";
 
 export default {
   components: {
-    NavBarComponent
+    NavBarComponent,
+    HeaderTitleComponent
   },
+  data() {
+      return {
+          title: 'Our Coffee'
+      }
+  }
 };
 </script>
 

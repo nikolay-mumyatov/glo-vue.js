@@ -9,7 +9,9 @@
 
           </div>
         </div>
-        <h1 class="title-big">For your pleasure</h1>
+
+        <header-title-component :title="this.title" />
+        
       </div>
     </div>
     <section class="shop">
@@ -47,12 +49,53 @@
           <div class="col-lg-10 offset-lg-1">
             <div class="shop__wrapper">
 
-              <card-product-component />
-              <card-product-component />
-              <card-product-component />
-              <card-product-component />
-              <card-product-component />
-              <card-product-component />
+              <card-product-component 
+                class="shop__item"
+                :icon="goodsCards[0].icon"
+                :title="goodsCards[0].title"
+                :country="goodsCards[0].country"
+                :price="goodsCards[0].price"
+              />
+
+              <card-product-component 
+                class="shop__item"
+                :icon="goodsCards[1].icon"
+                :title="goodsCards[1].title"
+                :country="goodsCards[1].country"
+                :price="goodsCards[1].price"
+              />
+
+              <card-product-component 
+                class="shop__item"
+                :icon="goodsCards[2].icon"
+                :title="goodsCards[2].title"
+                :country="goodsCards[2].country"
+                :price="goodsCards[2].price"
+              />
+
+              <card-product-component 
+                class="shop__item"
+                :icon="goodsCards[3].icon"
+                :title="goodsCards[3].title"
+                :country="goodsCards[3].country"
+                :price="goodsCards[3].price"
+              />
+
+              <card-product-component 
+                class="shop__item"
+                :icon="goodsCards[4].icon"
+                :title="goodsCards[4].title"
+                :country="goodsCards[4].country"
+                :price="goodsCards[4].price"
+              />
+
+              <card-product-component 
+                class="shop__item"
+                :icon="goodsCards[5].icon"
+                :title="goodsCards[5].title"
+                :country="goodsCards[5].country"
+                :price="goodsCards[5].price"
+              />
 
             </div>
           </div>
@@ -65,56 +108,59 @@
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
 import CardProductComponent from "@/components/CardProductComponent.vue";
+import HeaderTitleComponent from "@/components/HeaderTitleComponent.vue"
 
 export default {
   components: {
     NavBarComponent,
     CardProductComponent,
+    HeaderTitleComponent
   },
   data() {
     return {
-      cards: [
+      title: 'For your pleasure',
+      goodsCards: [
         {
           id: 0,
-          icon: "coffee-3.jpg",
+          icon: "good-1.jpg",
           title: "Solimo Coffee Beans 2kg",
           country: "Brazil",
-          price: "10.73$",
+          price: "10.73",
         },
         {
           id: 1,
-          icon: "coffee-3.jpg",
+          icon: "good-1.jpg",
           title: "Presto Coffee Beans 1kg",
           country: "Brazil",
-          price: "15.99$",
+          price: "15.99",
         },
         {
           id: 2,
-          icon: "coffee-3.jpg",
+          icon: "good-1.jpg",
           title: "AROMISTICO Coffee 1kg",
           country: "Brazil",
-          price: "6.99$",
+          price: "6.99",
         },
         {
           id: 3,
-          icon: "coffee-3.jpg",
+          icon: "good-1.jpg",
           title: "Africa Coffee 1kg",
           country: "Africa",
-          price: "8.99$",
+          price: "8.99",
         },
         {
           id: 4,
-          icon: "coffee-3.jpg",
+          icon: "good-1.jpg",
           title: "Argentina Coffee 2kg",
           country: "Argentina",
-          price: "13.99$",
+          price: "13.99",
         },
         {
           id: 5,
-          icon: "coffee-3.jpg",
+          icon: "good-1.jpg",
           title: "Pakistan Coffee 1kg",
           country: "Pakistan",
-          price: "5.99$",
+          price: "5.99",
         },
       ],
     };

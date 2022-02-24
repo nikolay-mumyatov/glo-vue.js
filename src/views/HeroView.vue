@@ -4,14 +4,14 @@
       <div class="container">
         <div class="row">
           <div class="col">
-
             <nav-bar-component />
-
           </div>
         </div>
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
-            <h1 class="title-big">Everything You Love About Coffee</h1>
+
+            <header-title-component :title="this.title" />
+
             <img
               class="beanslogo"
               src="@/assets/logo/Beans_logo.svg"
@@ -22,8 +22,9 @@
             </div>
             <div class="preview__subtitle">Want to try our beans?</div>
 
-            <router-link to="/our-coffee" class="preview__btn" >More</router-link >
-
+            <router-link to="/our-coffee" class="preview__btn"
+              >More</router-link
+            >
           </div>
         </div>
       </div>
@@ -65,11 +66,26 @@
         <div class="row">
           <div class="col-lg-10 offset-lg-1">
             <div class="best__wrapper">
+              <card-product-component
+                :icon="bestsellers[0].icon"
+                :title="bestsellers[0].title"
+                :country="bestsellers[0].country"
+                :price="bestsellers[0].price"
+              />
 
-              <card-product-component />
-              <card-product-component />
-              <card-product-component />
+              <card-product-component
+                :icon="bestsellers[1].icon"
+                :title="bestsellers[1].title"
+                :country="bestsellers[1].country"
+                :price="bestsellers[1].price"
+              />
 
+              <card-product-component
+                :icon="bestsellers[2].icon"
+                :title="bestsellers[2].title"
+                :country="bestsellers[2].country"
+                :price="bestsellers[2].price"
+              />
             </div>
           </div>
         </div>
@@ -81,56 +97,35 @@
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
 import CardProductComponent from "@/components/CardProductComponent.vue";
+import HeaderTitleComponent from "@/components/HeaderTitleComponent.vue";
 
 export default {
   components: {
     NavBarComponent,
     CardProductComponent,
+    HeaderTitleComponent,
   },
   data() {
     return {
-      cards: [
+      title: "Everything You Love About Coffee",
+      bestsellers: [
         {
           id: 0,
-          icon: "good-1.jpg",
+          icon: "coffee-1.jpg",
           title: "Solimo Coffee Beans 2kg",
-          country: "Brazil",
-          price: "10.73$",
+          price: "10.73",
         },
         {
           id: 1,
-          icon: "good-1.jpg",
+          icon: "coffee-2.jpg",
           title: "Presto Coffee Beans 1kg",
-          country: "Brazil",
-          price: "15.99$",
+          price: "15.99",
         },
         {
           id: 2,
-          icon: "good-1.jpg",
+          icon: "coffee-3.jpg",
           title: "AROMISTICO Coffee 1kg",
-          country: "Brazil",
-          price: "6.99$",
-        },
-        {
-          id: 3,
-          icon: "good-1.jpg",
-          title: "Africa Coffee 1kg",
-          country: "Africa",
-          price: "8.99$",
-        },
-        {
-          id: 4,
-          icon: "good-1.jpg",
-          title: "Argentina Coffee 2kg",
-          country: "Argentina",
-          price: "13.99$",
-        },
-        {
-          id: 5,
-          icon: "good-1.jpg",
-          title: "Pakistan Coffee 1kg",
-          country: "Pakistan",
-          price: "5.99$",
+          price: "6.99",
         },
       ],
     };
