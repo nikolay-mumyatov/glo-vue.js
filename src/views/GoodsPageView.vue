@@ -60,7 +60,7 @@
                 <template v-if="item.country" v-slot:country>
                   <div class="shop__item-country"> {{ item.country }} </div>
                 </template>
-                
+
               </card-product-component>
 
             </div>
@@ -85,52 +85,13 @@ export default {
   data() {
     return {
       title: "For your pleasure",
-      goodsCards: [
-        {
-          id: 0,
-          icon: "good-1.jpg",
-          title: "Solimo Coffee Beans 2kg",
-          country: "Brazil",
-          price: "10.73",
-        },
-        {
-          id: 1,
-          icon: "good-1.jpg",
-          title: "Presto Coffee Beans 1kg",
-          country: "Brazil",
-          price: "15.99",
-        },
-        {
-          id: 2,
-          icon: "good-1.jpg",
-          title: "AROMISTICO Coffee 1kg",
-          country: "Brazil",
-          price: "6.99",
-        },
-        {
-          id: 3,
-          icon: "good-1.jpg",
-          title: "Africa Coffee 1kg",
-          country: "Africa",
-          price: "8.99",
-        },
-        {
-          id: 4,
-          icon: "good-1.jpg",
-          title: "Argentina Coffee 2kg",
-          country: "Argentina",
-          price: "13.99",
-        },
-        {
-          id: 5,
-          icon: "good-1.jpg",
-          title: "Pakistan Coffee 1kg",
-          country: "Pakistan",
-          price: "5.99",
-        },
-      ],
     };
   },
+  computed: {
+    goodsCards() {
+      return this.$store.getters["getGoodsCards"]
+    }
+  }
 };
 </script>
 

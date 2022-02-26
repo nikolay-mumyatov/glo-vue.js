@@ -4,7 +4,6 @@
       <div class="row">
         <div class="col-lg-6 offset-lg-3">
           <ul class="footer d-flex flex-wrap">
-
             <nav-item-component
               v-for="item in links"
               :key="links.id"
@@ -12,11 +11,13 @@
               :text="item.text"
               classLink="footer__item"
             >
-              <template v-if="item.icon" v-slot:image>
-                <img :src="require(`@/assets/logo/${item.icon}`)" alt="logo" />
+              <template v-if="item.iconBlack" v-slot:image>
+                <img
+                  :src="require(`@/assets/logo/${item.iconBlack}`)"
+                  alt="logo"
+                />
               </template>
             </nav-item-component>
-
           </ul>
         </div>
       </div>
@@ -31,37 +32,16 @@
 </template>
 
 <script>
-import NavItemComponent from '@/components/NavItemComponent.vue'
+import NavItemComponent from "@/components/NavItemComponent.vue";
 
 export default {
   components: {
-    NavItemComponent
+    NavItemComponent,
   },
-  data() {
-    return {
-      links: [
-        {
-          id: 0,
-          icon: "Logo_black.svg",
-          link: "/",
-        },
-        {
-          id: 1,
-          text: "Our coffee",
-          link: "/our-coffee",
-        },
-        {
-          id: 2,
-          text: "For your pleasure",
-          link: "/goods-page",
-        },
-        {
-          id: 3,
-          text: "Contact us",
-          link: "/contacts",
-        },
-      ],
-    };
+  computed: {
+    links() {
+      return this.$store.getters["getNavBarLinks"];
+    },
   },
 };
 </script>

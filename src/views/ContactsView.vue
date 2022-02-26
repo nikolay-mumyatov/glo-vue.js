@@ -108,7 +108,7 @@ export default {
   },
   methods: {
       submit() {
-          console.log('submit');
+          console.log(this.form);
       }
   }
 };

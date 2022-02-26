@@ -2,7 +2,7 @@
   <li :class="classLink">
     <router-link :to="link">
       <slot name="image"></slot>
-      <span>{{ text }}</span>
+      <span v-if="text" >{{ text }}</span>
     </router-link>
   </li>
 </template>
