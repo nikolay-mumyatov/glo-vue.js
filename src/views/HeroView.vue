@@ -22,9 +22,8 @@
             </div>
             <div class="preview__subtitle">Want to try our beans?</div>
 
-            <router-link to="/our-coffee" class="preview__btn"
-              >More</router-link
-            >
+            <router-link to="/our-coffee" class="preview__btn" >More</router-link >
+            
           </div>
         </div>
       </div>
