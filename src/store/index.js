@@ -4,12 +4,16 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 
 import links from './links';
-import allCards from './allCards';
+import bestsellers from './bestsellers';
+import coffeeCards from './coffeeCards';
+import goodsCards from './goodsCards';
 
 const store = new Vuex.Store({
   modules: {
     links,
-    allCards
+    bestsellers,
+    coffeeCards,
+    goodsCards
   }
 });
 

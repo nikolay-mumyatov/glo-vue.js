@@ -68,9 +68,7 @@
 
               <card-product-component
                 v-for="item in bestsellers"
-                :icon="item.icon"
-                :title="item.title"
-                :price="item.price"
+                :card="item"
               />
 
             </div>

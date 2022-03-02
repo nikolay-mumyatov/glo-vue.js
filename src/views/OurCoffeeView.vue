@@ -75,9 +75,8 @@
               <card-product-component
                 v-for="item in coffeeCards"
                 class="shop__item"
-                :icon="item.icon"
-                :title="item.title"
-                :price="item.price"
+                :card="item"
+                @onNavigate="navigate"
               >
                 <template v-if="item.country" v-slot:country>
                   <div class="shop__item-country"> {{ item.country }} </div>
@@ -98,6 +97,8 @@ import NavBarComponent from "@/components/NavBarComponent.vue";
 import CardProductComponent from "@/components/CardProductComponent.vue";
 import HeaderTitleComponent from "@/components/HeaderTitleComponent.vue";
 
+import { navigate } from '../mixins/navigate';
+
 export default {
   components: {
     NavBarComponent,
@@ -107,13 +108,17 @@ export default {
   data() {
     return {
       title: "Our Coffee",
+      name: 'coffee'
     };
   },
   computed: {
     coffeeCards() {
       return this.$store.getters["getCoffeeCards"]
     }
-  }
+  },
+  mixins: [
+    navigate
+  ]
 };
 </script>
 

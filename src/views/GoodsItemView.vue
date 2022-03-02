@@ -1,6 +1,6 @@
 <template>
      <main>
-    <div class="banner itempage-banner">
+    <div class="banner" :class="pageName === 'coffee' ? 'coffepage-banner' : 'goodspage-banner' ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
@@ -10,7 +10,9 @@
                 </div>
             </div>
 
-            <header-title-component :title="this.title" />
+            <div class="header__title"> 
+                <h1 class="title-big">{{ card.title }}</h1> 
+            </div>
                 
         </div>
     </div>
@@ -19,14 +21,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-5 offset-1">
-                    <img class="shop__girl" src="img/coffee_item.jpg" alt="coffee_item">
+                    <img class="shop__girl" :src="require(`@/assets/./img/${card.icon}`)" alt="coffee_item">
                 </div>
                 <div class="col-lg-4">
                     <div class="title">About it</div>
-                    <img class="beanslogo" src="logo/Beans_logo_dark.svg" alt="Beans logo">
+                    <img class="beanslogo" src="@/assets/logo/Beans_logo_dark.svg" alt="Beans logo">
                     <div class="shop__point">
                         <span>Country:</span>
-                        Brazil
+                        {{card.country}}
                     </div>
                     <div class="shop__point">
                         <span>Description:</span>
@@ -36,8 +38,8 @@
                         consequat.
                     </div>
                     <div class="shop__point">
-                        <span>Price:</span>
-                        <span class="shop__point-price">16.99$</span>
+                        <span>Price: </span>
+                        <span class="shop__point-price">{{card.price | addCurrency }}</span>
                     </div>
                 </div>
             </div>
@@ -48,16 +50,18 @@
 
 <script>
 import NavBarComponent from "@/components/NavBarComponent.vue";
-import HeaderTitleComponent from "@/components/HeaderTitleComponent.vue";
 
 export default {
   components: {
-    NavBarComponent,
-    HeaderTitleComponent
+    NavBarComponent
   },
-  data() {
-      return {
-          title: 'Our Coffee'
+  computed: {
+      pageName() {
+        return this.$route.name
+      },
+      card() {
+        const getter = this.pageName === 'coffee' ? 'getCoffeeById' : 'getGoodsById';
+        return this.$store.getters[getter](this.$route.params.id);
       }
   }
 };
