@@ -1,16 +1,16 @@
 "use strict";
 
-import Vue from "vue";
-import App from "./App.vue";
+import Vue from 'vue';
+import App from './App.vue';
 import router from './router';
 import store from './store';
-import "./assets/scss/style.scss";
-import './filters';
+import "./assets/css/bootstrap.min.css";
+import "./assets/css/style.css";
 
 Vue.config.productionTip = false;
 
 new Vue({
   store,
   router,
-  render: (h) => h(App),
-}).$mount("#app");
+  render: h => h(App),
+}).$mount('#app');

@@ -1,22 +1,17 @@
 <template>
-  <div class="wrapper">
+  <div>
 
     <router-view/>
-    <footer-component/>
-    
-  </div>
 
+  </div>
 </template>
 
 <script>
-  import FooterComponent from '@/components/FooterComponent.vue'
-
   export default {
-    components: {
-      FooterComponent
-    }
-  }
 
+  };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>

@@ -1,4 +1,4 @@
-# vue_lessons
+# tours
 
 ## Project setup
 ```
