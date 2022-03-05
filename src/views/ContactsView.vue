@@ -165,14 +165,38 @@ export default {
     async submit() {
       const isFormCorrect = await this.v$.$validate();
       if (!isFormCorrect) return;
+
+      const message = {
+        name: this.name,
+        email: this.email,
+        phone: this.phone,
+        textarea: this.textarea,
+      };
+
+      const postData = (body) => {
+        return fetch("http://localhost:3000/contacts/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(body),
+        });
+      };
+
+      postData(message)
+        .then((res) => res.json())
+        .then((res) => {
+            window.location = "/thanks";
+            form.reset();
+        })
     },
   },
 };
 </script>
 
 <style lang="scss" scoped>
-    span{
-        font-size: 12px;
-        color: red;
-    }
+span {
+  font-size: 12px;
+  color: red;
+}
 </style>

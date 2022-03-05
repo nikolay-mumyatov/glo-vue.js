@@ -49,6 +49,19 @@ const coffeeCards = {
     ],
   },
 
+  mutations: {
+    setCoffeeData(state, data) {
+      state.coffeeCards = data;
+
+    }
+  },
+
+  actions:{
+    setCoffeeData({commit}, data) {
+      commit('setCoffeeData', data);
+    }
+  },
+
   getters: {
 
     getCoffeeCards(state) {
